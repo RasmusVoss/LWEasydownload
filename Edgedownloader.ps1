@@ -1,4 +1,4 @@
-$Path = "C:\selenium"
+$Path = "C:\selenium\2"
 $previousversion = Get-Content -Path $Path\edgeversion.txt
 $installedversion = (Get-ItemProperty -Path HKCU:\Software\Microsoft\Edge\BLBeacon -Name version).version
 If ($previousversion -eq $installedversion) {
