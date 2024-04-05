@@ -13,7 +13,7 @@ If ($previousversion -eq $installedversion) {
   $WebClient.DownloadFile($URL,$filepath)
   Add-Type -Assembly System.IO.Compression.FileSystem
   $zipFile = [IO.Compression.ZipFile]::OpenRead($filepath)
-  $zipFile.Entries | Where-Object Name -like msedgedriver.exe | ForEach-Object{[System.IO.Compression.ZipFileExtensions]::ExtractToFile($_, “$Path\$($_.Name)”, $true)}
+  $zipFile.Entries | Where-Object Name -like msedgedriver.exe | ForEach-Object{[System.IO.Compression.ZipFileExtensions]::ExtractToFile($_, "$Path\$($_.Name)", $true)}
   $zipFile.Dispose()
   Remove-Item $Path\edgedriver_win64.zip
   }
